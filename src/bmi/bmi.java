@@ -16,11 +16,12 @@ public class bmi extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		
+		
 		double weight;
 		double height;
 		try {
-			weight = Double.parseDouble(req.getParameter("weight"));
-			height = Double.parseDouble(req.getParameter("height"));
+			weight = Double.parseDouble(req.getParameter("kg"));
+			height = Double.parseDouble(req.getParameter("cm"));
 		} catch (Exception e) {
 			req.setAttribute("error", "ÉpÉâÉÅÅ[É^Ç™ê≥ÇµÇ≠Ç†ÇËÇ‹ÇπÇÒ");
 			req.getRequestDispatcher("/WEB-INF/mvc/bmi/error.jsp")
@@ -32,6 +33,6 @@ public class bmi extends HttpServlet {
 	    req.setAttribute("person", person);
 
 	    req.getRequestDispatcher("/WEB-INF/mvc/bmi/result.jsp")
-	        .forward(req, res);          
+	        .forward(req, res);   
 	}
 }
