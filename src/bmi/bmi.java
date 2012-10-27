@@ -33,6 +33,7 @@ public class bmi extends HttpServlet {
 	    req.setAttribute("person", person);
 
 	    req.getRequestDispatcher("/WEB-INF/mvc/bmi/result.jsp")
-	        .forward(req, res);   
+	        .forward(req, res);
+	    String sintyou = req.getParameter("sintyou");
 	}
 }
